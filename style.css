@@ -7,11 +7,17 @@ body{
     text-align: center;
 }
 .chart{
-    border: 2px green solid;
+    border: 2px rgb(126, 19, 54) solid;
     text-align: center;
     /* width: 100%; */
     padding: 1vmin;
-    height: 10vh;
+    /* height: 10vh; */
+}
+
+#myChart{
+    border: 2px rgb(30, 22, 136) solid;
+    width: 100%;
+    /* height: 9vh; */
 }
 .btn{
     border: 2px green solid;
@@ -39,7 +45,3 @@ body{
 span:hover{
     color: blue;
 }
-
-/* .total{
-    border: 2px green solid;
-} */
