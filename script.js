@@ -7,23 +7,63 @@ async function covid19() {
     let data = JSON.parse(localStorage.getItem("tempStorage"))
 
     let arrayWorld = []
+
     let arrayAsia = []
     let arrayAsiaNames = []
     let arrayAsiaValues = []
+    let arrayAsiaValuesConfirmed = []
+    let arrayAsiaValuesRecovered = []
+    let arrayAsiaValuesCritical = []
+
     let arrayEuropa = []
+    let arrayEuropaNames = []
+    let arrayEuropaValues = []
+    let arrayEuropaValuesConfirmed = []
+    let arrayEuropaValuesRecovered = []
+    let arrayEuropaValuesCritical = []
+
     let arrayAmericas = []
+    let arrayAmericasNames = []
+    let arrayAmericasValues = []
+    let arrayAmericasValuesConfirmed = []
+    let arrayAmericasValuesRecovered = []
+    let arrayAmericasValuesCritical = []
+
     let arrayAfrica = []
+    let arrayAfricaNames = []
+    let arrayAfricaValues = []
+    let arrayAfricaValuesConfirmed = []
+    let arrayAfricaValuesRecovered = []
+    let arrayAfricaValuesCritical = []
+
     let btnWorld = document.querySelector('.btnWorld')
+
     let btnAsia = document.querySelector('.btnAsia')
+    let btnAsiaConfirmed = document.querySelector('.btnAsiaConfirmed')
+    let btnAsiaRecovered = document.querySelector('.btnAsiaRecovered')
+    let btnAsiaCritical = document.querySelector('.btnAsiaCritical')
+
     let btnEuropa = document.querySelector('.btnEuropa')
+    let btnEuropaConfirmed = document.querySelector('.btnEuropaConfirmed')
+    let btnEuropaRecovered = document.querySelector('.btnEuropaRecovered')
+    let btnEuropaCritical = document.querySelector('.btnEuropaCritical')
+
     let btnAmericas = document.querySelector('.btnAmericas')
+    let btnAmericasConfirmed = document.querySelector('.btnAmericasConfirmed')
+    let btnAmericasRecovered = document.querySelector('.btnAmericasRecovered')
+    let btnAmericasCritical = document.querySelector('.btnAmericasCritical')
+
     let btnAfrica = document.querySelector('.btnAfrica')
+    let btnAfricaConfirmed = document.querySelector('.btnAfricaConfirmed')
+    let btnAfricaRecovered = document.querySelector('.btnAfricaRecovered')
+    let btnAfricaCritical = document.querySelector('.btnAfricaCritical')
+
     let chart = document.querySelector('.chart')
     let stats = document.querySelector('.stats')
 
 
     let myChart
-    function Chartt(arrayAsiaNames, arrayAsiaValues) {
+    function Chartt(arrayNames, arrayValues) {
         if (myChart)
             myChart.destroy();
 
@@ -31,10 +71,10 @@ async function covid19() {
         myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: arrayAsiaNames,
+                labels: arrayNames,
                 datasets: [{
                     label: '# of Votes',
-                    data: arrayAsiaValues,
+                    data: arrayValues,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -63,6 +103,7 @@ async function covid19() {
             }
         });
     }
+
     for (let i = 0; i < data.data1.data.length; i++) {
         arrayWorld.push(data.data1.data[i])
     }
@@ -73,28 +114,81 @@ async function covid19() {
             for (let j = 0; j < data.data1.data.length; j++) {
                 if (data.data2[i].cca2 == data.data1.data[j].code) {
                     arrayAsiaValues.push(data.data1.data[j].latest_data.deaths)
+                    arrayAsiaValuesConfirmed.push(data.data1.data[j].latest_data.confirmed)
+                    arrayAsiaValuesRecovered.push(data.data1.data[j].latest_data.recovered)
+                    arrayAsiaValuesCritical.push(data.data1.data[j].latest_data.critical)
                 }
             }
         }
   
         if (data.data2[i].region == 'Europe') {
             arrayEuropa.push(data.data2[i])
+            arrayEuropaNames.push(data.data2[i].name.common)
+            for (let j = 0; j < data.data1.data.length; j++) {
+                if (data.data2[i].cca2 == data.data1.data[j].code) {
+                    arrayEuropaValues.push(data.data1.data[j].latest_data.deaths)
+                    arrayEuropaValuesConfirmed.push(data.data1.data[j].latest_data.confirmed)
+                    arrayEuropaValuesRecovered.push(data.data1.data[j].latest_data.recovered)
+                    arrayEuropaValuesCritical.push(data.data1.data[j].latest_data.critical)
+                }
+            }
         }
+
         if (data.data2[i].region == 'Americas') {
             arrayAmericas.push(data.data2[i])
+            arrayAmericasNames.push(data.data2[i].name.common)
+            for (let j = 0; j < data.data1.data.length; j++) {
+                if (data.data2[i].cca2 == data.data1.data[j].code) {
+                    arrayAmericasValues.push(data.data1.data[j].latest_data.deaths)
+                    arrayAmericasValuesConfirmed.push(data.data1.data[j].latest_data.confirmed)
+                    arrayAmericasValuesRecovered.push(data.data1.data[j].latest_data.recovered)
+                    arrayAmericasValuesCritical.push(data.data1.data[j].latest_data.critical)
+                }
+            }
         }
         if (data.data2[i].region == 'Africa') {
             arrayAfrica.push(data.data2[i])
+            arrayAfricaNames.push(data.data2[i].name.common)
+            for (let j = 0; j < data.data1.data.length; j++) {
+                if (data.data2[i].cca2 == data.data1.data[j].code) {
+                    arrayAfricaValues.push(data.data1.data[j].latest_data.deaths)
+                    arrayAfricaValuesConfirmed.push(data.data1.data[j].latest_data.confirmed)
+                    arrayAfricaValuesRecovered.push(data.data1.data[j].latest_data.recovered)
+                    arrayAfricaValuesCritical.push(data.data1.data[j].latest_data.critical)
+                }
+            }
         }
 
     }
     // console.log(arrayAsiaNames);
 
     btnWorld.addEventListener('click', getAllCountriesWorld)
+
     btnAsia.addEventListener('click', getAllCountriesAsia)
+    btnAsiaConfirmed.addEventListener('click', getAllCountriesAsiaConfirmed)
+    btnAsiaRecovered.addEventListener('click', getAllCountriesAsiaRecovered)
+    btnAsiaCritical.addEventListener('click', getAllCountriesAsiaCritical)
+
     btnEuropa.addEventListener('click', getAllCountriesEuropa)
+    btnEuropaConfirmed.addEventListener('click', getAllCountriesEuropaConfirmed)
+    btnEuropaRecovered.addEventListener('click', getAllCountriesEuropaRecovered)
+    btnEuropaCritical.addEventListener('click', getAllCountriesEuropaCritical)
+
+
+
     btnAmericas.addEventListener('click', getAllCountriesAmericas)
+    btnAmericasConfirmed.addEventListener('click', getAllCountriesAmericasConfirmed)
+    btnAmericasRecovered.addEventListener('click', getAllCountriesAmericasRecovered)
+    btnAmericasCritical.addEventListener('click', getAllCountriesAmericasCritical)
+
+
+
     btnAfrica.addEventListener('click', getAllCountriesAfrica)
+    btnAfricaConfirmed.addEventListener('click', getAllCountriesAfricaConfirmed)
+    btnAfricaRecovered.addEventListener('click', getAllCountriesAfricaRecovered)
+    btnAfricaCritical.addEventListener('click', getAllCountriesAfricaCritical)
+
+
 
 
 
@@ -113,26 +207,116 @@ async function covid19() {
         // chart.innerHTML = ''
         Chartt(arrayAsiaNames, arrayAsiaValues)
     }
+    function getAllCountriesAsiaConfirmed() {
+        stats.innerHTML = ''
+        arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".asia");
+        cboxSelectorAll(cbox)
+        // chart.innerHTML = ''
+        Chartt(arrayAsiaNames, arrayAsiaValuesConfirmed)
+    }
+    function getAllCountriesAsiaRecovered() {
+        stats.innerHTML = ''
+        arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".asia");
+        cboxSelectorAll(cbox)
+        // chart.innerHTML = ''
+        Chartt(arrayAsiaNames, arrayAsiaValuesRecovered)
+    }
+    function getAllCountriesAsiaCritical() {
+        stats.innerHTML = ''
+        arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".asia");
+        cboxSelectorAll(cbox)
+        // chart.innerHTML = ''
+        Chartt(arrayAsiaNames, arrayAsiaValuesCritical)
+    }
+
     function getAllCountriesEuropa() {
         stats.innerHTML = ''
         arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">${item.name.common}</span>`);
         const cbox = document.querySelectorAll(".europa");
         cboxSelectorAll(cbox)
-
+        Chartt(arrayEuropaNames, arrayEuropaValues)
     }
+    function getAllCountriesEuropaConfirmed() {
+        stats.innerHTML = ''
+        arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".europa");
+        cboxSelectorAll(cbox)
+        Chartt(arrayEuropaNames, arrayEuropaValuesConfirmed)
+    }
+    function getAllCountriesEuropaRecovered() {
+        stats.innerHTML = ''
+        arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".europa");
+        cboxSelectorAll(cbox)
+        Chartt(arrayEuropaNames, arrayEuropaValuesRecovered)
+    }
+    function getAllCountriesEuropaCritical() {
+        stats.innerHTML = ''
+        arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".europa");
+        cboxSelectorAll(cbox)
+        Chartt(arrayEuropaNames, arrayEuropaValuesCritical)
+    }
+
     function getAllCountriesAmericas() {
         stats.innerHTML = ''
         arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">${item.name.common}</span>`);
-
         const cbox = document.querySelectorAll(".americas");
-
         cboxSelectorAll(cbox)
+        Chartt(arrayAmericasNames, arrayAmericasValues)
     }
+    function getAllCountriesAmericasConfirmed() {
+        stats.innerHTML = ''
+        arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".americas");
+        cboxSelectorAll(cbox)
+        Chartt(arrayAmericasNames, arrayAmericasValuesConfirmed)
+    }
+    function getAllCountriesAmericasRecovered() {
+        stats.innerHTML = ''
+        arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".americas");
+        cboxSelectorAll(cbox)
+        Chartt(arrayAmericasNames, arrayAmericasValuesRecovered)
+    }
+    function getAllCountriesAmericasCritical() {
+        stats.innerHTML = ''
+        arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".americas");
+        cboxSelectorAll(cbox)
+        Chartt(arrayAmericasNames, arrayAmericasValuesCritical)
+    }
+
     function getAllCountriesAfrica() {
         stats.innerHTML = ''
         arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">${item.name.common}</span>`);
         const cbox = document.querySelectorAll(".africa");
         cboxSelectorAll(cbox)
+        Chartt(arrayAfricaNames, arrayAfricaValues)
+    }
+    function getAllCountriesAfricaConfirmed() {
+        stats.innerHTML = ''
+        arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".africa");
+        cboxSelectorAll(cbox)
+        Chartt(arrayAfricaNames, arrayAfricaValuesConfirmed)
+    }
+    function getAllCountriesAfricaRecovered() {
+        stats.innerHTML = ''
+        arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".africa");
+        cboxSelectorAll(cbox)
+        Chartt(arrayAfricaNames, arrayAfricaValuesRecovered)
+    }
+    function getAllCountriesAfricaCritical() {
+        stats.innerHTML = ''
+        arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        const cbox = document.querySelectorAll(".africa");
+        cboxSelectorAll(cbox)
+        Chartt(arrayAfricaNames, arrayAfricaValuesCritical)
     }
 
     function cboxSelectorAll(cbox) {
@@ -153,8 +337,6 @@ async function covid19() {
             });
         }
     }
-    
-    // Chartt(arrayAsiaNames, arrayAsiaValues)
    
 }
 
