@@ -7,6 +7,11 @@ async function covid19() {
     let data = JSON.parse(localStorage.getItem("tempStorage"))
 
     let arrayWorld = []
+    let arrayWorldNames = []
+    let arrayWorldValues = []
+    let arrayyWorldValuesConfirmed = []
+    let arrayyWorldValuesRecovered = []
+    let arrayyWorldValuesCritical = []
 
     let arrayAsia = []
     let arrayAsiaNames = []
@@ -37,6 +42,9 @@ async function covid19() {
     let arrayAfricaValuesCritical = []
 
     let btnWorld = document.querySelector('.btnWorld')
+    let btnWorldConfirmed = document.querySelector('.btnWorldConfirmed')
+    let btnWorldRecovered = document.querySelector('.btnWorldRecovered')
+    let btnWorldCritical = document.querySelector('.btnWorldCritical')
 
     let btnAsia = document.querySelector('.btnAsia')
     let btnAsiaConfirmed = document.querySelector('.btnAsiaConfirmed')
@@ -106,7 +114,13 @@ async function covid19() {
 
     for (let i = 0; i < data.data1.data.length; i++) {
         arrayWorld.push(data.data1.data[i])
+        arrayWorldNames.push(data.data1.data[i].name)
+        arrayWorldValues.push(data.data1.data[i].latest_data.deaths)
+        arrayyWorldValuesConfirmed.push(data.data1.data[i].latest_data.confirmed)
+        arrayyWorldValuesRecovered.push(data.data1.data[i].latest_data.recovered)
+        arrayyWorldValuesCritical.push(data.data1.data[i].latest_data.critical)
     }
+    console.log(data.data1.data[0]);
     for (let i = 0; i < data.data2.length; i++) {
         if (data.data2[i].region == 'Asia') {
             arrayAsia.push(data.data2[i])
@@ -120,7 +134,7 @@ async function covid19() {
                 }
             }
         }
-  
+
         if (data.data2[i].region == 'Europe') {
             arrayEuropa.push(data.data2[i])
             arrayEuropaNames.push(data.data2[i].name.common)
@@ -163,6 +177,9 @@ async function covid19() {
     // console.log(arrayAsiaNames);
 
     btnWorld.addEventListener('click', getAllCountriesWorld)
+    btnWorldConfirmed.addEventListener('click', getAllCountriesWorldConfirmed)
+    btnWorldRecovered.addEventListener('click', getAllCountriesWorldRecovered)
+    btnWorldCritical.addEventListener('click', getAllCountriesWorldCritical)
 
     btnAsia.addEventListener('click', getAllCountriesAsia)
     btnAsiaConfirmed.addEventListener('click', getAllCountriesAsiaConfirmed)
@@ -197,8 +214,30 @@ async function covid19() {
         arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">${item.name}</span>`);
         const cbox = document.querySelectorAll(".world");
         cboxSelectorAll(cbox)
-
+        Chartt(arrayWorldNames, arrayWorldValues)
     }
+    function getAllCountriesWorldConfirmed() {
+        stats.innerHTML = ''
+        arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">${item.name}</span>`);
+        const cbox = document.querySelectorAll(".world");
+        cboxSelectorAll(cbox)
+        Chartt(arrayWorldNames, arrayyWorldValuesConfirmed)
+    }
+    function getAllCountriesWorldRecovered() {
+        stats.innerHTML = ''
+        arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">${item.name}</span>`);
+        const cbox = document.querySelectorAll(".world");
+        cboxSelectorAll(cbox)
+        Chartt(arrayWorldNames, arrayyWorldValuesRecovered)
+    }
+    function getAllCountriesWorldCritical() {
+        stats.innerHTML = ''
+        arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">${item.name}</span>`);
+        const cbox = document.querySelectorAll(".world");
+        cboxSelectorAll(cbox)
+        Chartt(arrayWorldNames, arrayyWorldValuesCritical)
+    }
+
     function getAllCountriesAsia() {
         stats.innerHTML = ''
         arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">${item.name.common}</span>`);
@@ -337,7 +376,7 @@ async function covid19() {
             });
         }
     }
-   
+
 }
 
 covid19()

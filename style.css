@@ -3,11 +3,12 @@ body{
 }
 
 .p{
-    border: 2px green solid;
+    /* border: 2px green solid; */
     text-align: center;
+    font-size: 30px;
 }
 .chart{
-    border: 2px rgb(126, 19, 54) solid;
+    /* border: 2px rgb(126, 19, 54) solid; */
     text-align: center;
     /* width: 100%; */
     padding: 1vmin;
@@ -15,33 +16,36 @@ body{
 }
 
 #myChart{
-    border: 2px rgb(30, 22, 136) solid;
+    /* border: 2px rgb(30, 22, 136) solid; */
     width: 100%;
     /* height: 9vh; */
 }
 .btn{
-    border: 2px green solid;
+    /* border: 2px green solid; */
     text-align: center;
     padding: 1vmin;
-    margin: 5%;
-    /* width: 100%;
-    height: 10vh; */
-}
-.btnLand{
-    border: 2px green solid;
-    text-align: center;
-    padding: 1vmin;
-    margin: 5%;
+    margin: 1%;
     /* width: 100%;
     height: 10vh; */
 }
 
 .stats{
-    border: 2px green solid;
+    /* border: 2px green solid; */
     padding: 1vmin;
     /* height: 10vh; */
 }
 
 span:hover{
     color: blue;
+}
+
+input{
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600
+}
+input:hover{
+    background: rgb(1, 48, 70);
+    color: #fff;
 }
