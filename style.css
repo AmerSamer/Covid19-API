@@ -8,6 +8,7 @@ body{
 }
 .chart{
     border: 2px green solid;
+    text-align: center;
     /* width: 100%; */
     padding: 1vmin;
     height: 10vh;
@@ -38,3 +39,7 @@ body{
 span:hover{
     color: blue;
 }
+
+/* .total{
+    border: 2px green solid;
+} */
