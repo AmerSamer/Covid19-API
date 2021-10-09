@@ -34,3 +34,7 @@ body{
     padding: 1vmin;
     /* height: 10vh; */
 }
+
+span:hover{
+    color: blue;
+}
