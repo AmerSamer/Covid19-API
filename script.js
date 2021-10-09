@@ -211,28 +211,28 @@ async function covid19() {
 
     function getAllCountriesWorld() {
         stats.innerHTML = ''
-        arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">${item.name}</span>`);
+        arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">| ${item.name} |</span>`);
         const cbox = document.querySelectorAll(".world");
         cboxSelectorAll(cbox)
         Chartt(arrayWorldNames, arrayWorldValues)
     }
     function getAllCountriesWorldConfirmed() {
         stats.innerHTML = ''
-        arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">${item.name}</span>`);
+        arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">| ${item.name} |</span>`);
         const cbox = document.querySelectorAll(".world");
         cboxSelectorAll(cbox)
         Chartt(arrayWorldNames, arrayyWorldValuesConfirmed)
     }
     function getAllCountriesWorldRecovered() {
         stats.innerHTML = ''
-        arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">${item.name}</span>`);
+        arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">| ${item.name} |</span>`);
         const cbox = document.querySelectorAll(".world");
         cboxSelectorAll(cbox)
         Chartt(arrayWorldNames, arrayyWorldValuesRecovered)
     }
     function getAllCountriesWorldCritical() {
         stats.innerHTML = ''
-        arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">${item.name}</span>`);
+        arrayWorld.map(item => stats.innerHTML += `<span class="world" accessKey="${item.code}">| ${item.name} |</span>`);
         const cbox = document.querySelectorAll(".world");
         cboxSelectorAll(cbox)
         Chartt(arrayWorldNames, arrayyWorldValuesCritical)
@@ -240,7 +240,7 @@ async function covid19() {
 
     function getAllCountriesAsia() {
         stats.innerHTML = ''
-        arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".asia");
         cboxSelectorAll(cbox)
         // chart.innerHTML = ''
@@ -248,7 +248,7 @@ async function covid19() {
     }
     function getAllCountriesAsiaConfirmed() {
         stats.innerHTML = ''
-        arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".asia");
         cboxSelectorAll(cbox)
         // chart.innerHTML = ''
@@ -256,7 +256,7 @@ async function covid19() {
     }
     function getAllCountriesAsiaRecovered() {
         stats.innerHTML = ''
-        arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".asia");
         cboxSelectorAll(cbox)
         // chart.innerHTML = ''
@@ -264,7 +264,7 @@ async function covid19() {
     }
     function getAllCountriesAsiaCritical() {
         stats.innerHTML = ''
-        arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAsia.map(item => stats.innerHTML += `<span class="asia" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".asia");
         cboxSelectorAll(cbox)
         // chart.innerHTML = ''
@@ -273,28 +273,28 @@ async function covid19() {
 
     function getAllCountriesEuropa() {
         stats.innerHTML = ''
-        arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".europa");
         cboxSelectorAll(cbox)
         Chartt(arrayEuropaNames, arrayEuropaValues)
     }
     function getAllCountriesEuropaConfirmed() {
         stats.innerHTML = ''
-        arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".europa");
         cboxSelectorAll(cbox)
         Chartt(arrayEuropaNames, arrayEuropaValuesConfirmed)
     }
     function getAllCountriesEuropaRecovered() {
         stats.innerHTML = ''
-        arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".europa");
         cboxSelectorAll(cbox)
         Chartt(arrayEuropaNames, arrayEuropaValuesRecovered)
     }
     function getAllCountriesEuropaCritical() {
         stats.innerHTML = ''
-        arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayEuropa.map(item => stats.innerHTML += `<span class="europa" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".europa");
         cboxSelectorAll(cbox)
         Chartt(arrayEuropaNames, arrayEuropaValuesCritical)
@@ -302,28 +302,28 @@ async function covid19() {
 
     function getAllCountriesAmericas() {
         stats.innerHTML = ''
-        arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".americas");
         cboxSelectorAll(cbox)
         Chartt(arrayAmericasNames, arrayAmericasValues)
     }
     function getAllCountriesAmericasConfirmed() {
         stats.innerHTML = ''
-        arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".americas");
         cboxSelectorAll(cbox)
         Chartt(arrayAmericasNames, arrayAmericasValuesConfirmed)
     }
     function getAllCountriesAmericasRecovered() {
         stats.innerHTML = ''
-        arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".americas");
         cboxSelectorAll(cbox)
         Chartt(arrayAmericasNames, arrayAmericasValuesRecovered)
     }
     function getAllCountriesAmericasCritical() {
         stats.innerHTML = ''
-        arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAmericas.map(item => stats.innerHTML += `<span class="americas" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".americas");
         cboxSelectorAll(cbox)
         Chartt(arrayAmericasNames, arrayAmericasValuesCritical)
@@ -331,28 +331,28 @@ async function covid19() {
 
     function getAllCountriesAfrica() {
         stats.innerHTML = ''
-        arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".africa");
         cboxSelectorAll(cbox)
         Chartt(arrayAfricaNames, arrayAfricaValues)
     }
     function getAllCountriesAfricaConfirmed() {
         stats.innerHTML = ''
-        arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".africa");
         cboxSelectorAll(cbox)
         Chartt(arrayAfricaNames, arrayAfricaValuesConfirmed)
     }
     function getAllCountriesAfricaRecovered() {
         stats.innerHTML = ''
-        arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".africa");
         cboxSelectorAll(cbox)
         Chartt(arrayAfricaNames, arrayAfricaValuesRecovered)
     }
     function getAllCountriesAfricaCritical() {
         stats.innerHTML = ''
-        arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">${item.name.common}</span>`);
+        arrayAfrica.map(item => stats.innerHTML += `<span class="africa" accessKey="${item.cca2}">| ${item.name.common} |</span>`);
         const cbox = document.querySelectorAll(".africa");
         cboxSelectorAll(cbox)
         Chartt(arrayAfricaNames, arrayAfricaValuesCritical)
