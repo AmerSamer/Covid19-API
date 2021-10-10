@@ -120,7 +120,7 @@ async function covid19() {
         arrayyWorldValuesRecovered.push(data.data1.data[i].latest_data.recovered)
         arrayyWorldValuesCritical.push(data.data1.data[i].latest_data.critical)
     }
-    console.log(data.data1.data[0]);
+    // console.log(data.data1.data[0]);
     for (let i = 0; i < data.data2.length; i++) {
         if (data.data2[i].region == 'Asia') {
             arrayAsia.push(data.data2[i])
@@ -207,7 +207,7 @@ async function covid19() {
 
 
 
-
+    Chartt(arrayWorldNames, arrayyWorldValuesConfirmed)
 
     function getAllCountriesWorld() {
         stats.innerHTML = ''
